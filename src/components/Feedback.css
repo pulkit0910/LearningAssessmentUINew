@@ -1,26 +1,48 @@
-/* src/components/Feedback.css */
-
 .feedback-container {
-    margin-top: 20px;
     padding: 20px;
-    background: #060606;
-    border-radius: 10px;
+    text-align: center;
 }
 
-.feedback-message {
-    font-size: 1.2rem;
-    color: #00F6FF;
-}
-/* src/components/Feedback.css */
-
-.feedback-container {
+.feedback-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
-    padding: 20px;
-    background: #060606;
-    border-radius: 10px;
+    position: relative;
 }
 
-.feedback-message {
-    font-size: 1.2rem;
-    color: #00F6FF;
+.feedback-card {
+    background-color: #F2F2F2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 450px; /* Adjust width as needed */
+}
+
+.feedback-card h3 {
+    margin-bottom: 10px;
+}
+
+.feedback-card p {
+    margin: 5px 0;
+}
+
+.navigation-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #00F6FF;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
 }

@@ -1,5 +1,3 @@
-/* src/components/SkillSelector.js */
-
 import React, { useState } from 'react';
 import './SkillSelector.css';
 
@@ -13,12 +11,8 @@ const SkillSelector = ({ skills, onSkillSelect }) => {
 
     return (
         <div className="skill-selector-container">
+            {!selectedSkill && <h3 className="select-skill">Select a skill</h3>}
             <div className="skill-selector">
-                {!selectedSkill ? (
-                    <div className="select-skill">Select a skill</div>
-                ) : (
-                    <div className="selected-skill">{selectedSkill}</div>
-                )}
                 {!selectedSkill &&
                     skills.map((skill, index) => (
                         <button key={index} className="skill-button" onClick={() => handleSkillSelect(skill)}>
@@ -26,6 +20,7 @@ const SkillSelector = ({ skills, onSkillSelect }) => {
                         </button>
                     ))}
             </div>
+            {selectedSkill && <div className="selected-skill">{selectedSkill}</div>}
         </div>
     );
 };

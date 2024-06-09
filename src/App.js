@@ -4,9 +4,7 @@ import SubTopicSelector from './components/SubTopicSelector';
 import ScenarioQuiz from './components/ScenarioQuiz';
 import ProgressBar from './components/ProgressBar';
 import Feedback from './components/Feedback';
-import CompletionScreen from './components/CompletionScreen';
-import CustomLoading from './components/CustomLoading';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import LoadingSpinner from './components/LoadingSpinner';
 import './App.css';
 
 const App = () => {
@@ -16,7 +14,7 @@ const App = () => {
     const [scenarios, setScenarios] = useState([]);
     const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
     const [progress, setProgress] = useState(0);
-    const [feedback, setFeedback] = useState('');
+    const [feedback, setFeedback] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const handleSkillSelect = async (skill) => {
@@ -24,7 +22,7 @@ const App = () => {
         setSelectedSubTopics([]);
         setScenarios([]);
         setCurrentScenarioIndex(0);
-        setFeedback('');
+        setFeedback(null);
         setProgress(0);
 
         setLoading(true);
@@ -74,7 +72,6 @@ const App = () => {
         const currentScenario = scenarios[currentScenarioIndex];
         const scenarioNo = currentScenarioIndex + 1;
 
-        setLoading(true);
         try {
             await fetch('http://localhost:8199/ask/saveScenario', {
                 method: 'POST',
@@ -89,14 +86,12 @@ const App = () => {
             });
         } catch (error) {
             console.error('Error saving scenario:', error);
-        } finally {
-            setLoading(false);
         }
 
         const nextIndex = currentScenarioIndex + 1;
         if (nextIndex < scenarios.length) {
             setCurrentScenarioIndex(nextIndex);
-            setProgress(Math.round((nextIndex / scenarios.length) * 100));
+            setProgress(Math.round(((nextIndex) / scenarios.length) * 100));
         } else {
             setCurrentScenarioIndex(-1);
             setProgress(100);
@@ -107,13 +102,13 @@ const App = () => {
         setLoading(true);
         try {
             const response = await fetch('http://localhost:8199/ask/getFeedback', {
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
             const data = await response.json();
-            setFeedback(data.feedback || 'Interview submitted successfully!');
+            setFeedback(data);
         } catch (error) {
             console.error('Error submitting interview:', error);
         } finally {
@@ -124,10 +119,7 @@ const App = () => {
     return (
         <div className="app-container">
             <h1 className="app-title">Upskill Yourself</h1>
-            <SkillSelector 
-                skills={['JavaScript', 'Python', 'Java', 'React', 'Node.js', 'Data Structures & Algorithms', 'Microservices', 'SQL', 'DevOps', 'Cloud Computing', 'LLM', 'CSS', 'HTML']} 
-                onSkillSelect={handleSkillSelect} 
-            />
+            <SkillSelector skills={['Java', 'React', 'Node', 'DSA', 'Microservice', 'SQL', 'Devops', 'Cloud', 'LLM', 'Python']} onSkillSelect={handleSkillSelect} />
             {selectedSkill && !scenarios.length && (
                 <SubTopicSelector
                     subTopics={subTopics}
@@ -136,8 +128,7 @@ const App = () => {
                     onConfirm={handleSubTopicSelect}
                 />
             )}
-            {loading && <CustomLoading />}
-            {!loading && scenarios.length > 0 && currentScenarioIndex >= 0 && (
+            {scenarios.length > 0 && currentScenarioIndex >= 0 && (
                 <ScenarioQuiz
                     scenario={scenarios[currentScenarioIndex]}
                     scenarioIndex={currentScenarioIndex}
@@ -145,11 +136,15 @@ const App = () => {
                     onSubmit={handleScenarioSubmit}
                 />
             )}
-            {!loading && currentScenarioIndex === -1 && (
-                <CompletionScreen onSubmitInterview={handleSubmitInterview} />
+            {currentScenarioIndex === -1 && !feedback && (
+                <div className="completion-message">
+                    <h3>All scenarios completed!</h3>
+                    <button className="btn btn-primary" onClick={handleSubmitInterview}>Submit Interview</button>
+                </div>
             )}
-            {!loading && progress > 0 && <ProgressBar progress={progress} />}
-            {!loading && feedback && <Feedback feedback={feedback} />}
+            {progress > 0 && <ProgressBar progress={progress} />}
+            {feedback && <Feedback feedback={feedback} />}
+            {loading && <LoadingSpinner />}
         </div>
     );
 };

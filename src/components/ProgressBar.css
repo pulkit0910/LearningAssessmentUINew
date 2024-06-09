@@ -2,19 +2,43 @@
 
 .progress-bar-container {
     margin-top: 20px;
+    width: 100%;
+    background-color: #060606; /* NIGHT color */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .progress-bar {
-    width: 100%;
-    height: 20px;
-    background: #060606;
+    height: 30px;
+    width: 0;
+    background: linear-gradient(90deg, #00F6FF, #00FFF0); /* SEA to MINT gradient */
     border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+    position: relative;
     overflow: hidden;
 }
 
-.progress {
-    width: 0;
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-    background: #B896FF;
-    transition: width 0.5s ease;
+    width: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.5;
+    z-index: 1;
+    transform: rotate(45deg);
+    transform-origin: top left;
+    animation: stripe 1s linear infinite;
+}
+
+@keyframes stripe {
+    from {
+        left: -50px;
+    }
+    to {
+        left: 100%;
+    }
 }
