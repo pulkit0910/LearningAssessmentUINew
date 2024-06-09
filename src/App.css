@@ -1,0 +1,32 @@
+/* src/App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #060606, #060606);
+  color: #00F6FF;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #B896FF;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(to right, #00F6FF, #00FFF0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 50px;
+}

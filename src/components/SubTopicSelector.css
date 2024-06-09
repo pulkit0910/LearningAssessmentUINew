@@ -1,0 +1,55 @@
+/* src/components/SubTopicSelector.css */
+
+.subtopic-selector {
+    text-align: center;
+}
+
+.selected-subtopic {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #7BA8FF; /* Sky color */
+}
+.subtopic-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subtopic-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.subtopic-button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #B896FF;
+    color: #060606;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subtopic-button.active {
+    background-color: #7BA8FF;
+}
+
+.confirm-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #00F6FF;
+    color: #060606;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #00FFF0;
+}

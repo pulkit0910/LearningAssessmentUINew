@@ -1,0 +1,72 @@
+/* src/components/CompletionScreen.css */
+
+.completion-screen {
+    background-color: #060606;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #00F6FF;
+}
+
+.completion-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #B896FF;
+}
+
+.submit-button {
+    background-color: #00FFF0;
+    color: #060606;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #00F6FF;
+    transform: scale(1.1);
+}
+
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #B896FF;
+}
+/* src/components/CompletionScreen.css */
+
+.completion-screen {
+    background-color: #060606;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #00F6FF;
+}
+
+.completion-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #B896FF;
+}
+
+.submit-button {
+    background-color: #00FFF0;
+    color: #060606;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #00F6FF;
+    transform: scale(1.1);
+}
+
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #B896FF;
+}

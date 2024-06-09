@@ -1,0 +1,74 @@
+/* src/components/ScenarioQuiz.css */
+
+.scenario-quiz {
+    text-align: center;
+    width: 150%; /* Set width to 150% */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the component horizontally */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+.topic-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #B896FF; /* Lilac color */
+    text-align: center;
+}
+
+.scenario-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scenario {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.scenario-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #7BA8FF; /* Sky color */
+}
+
+.answer-textarea {
+    margin-bottom: 20px;
+    border: 1px solid #7BA8FF; /* Sky color */
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.hint-button {
+    margin-bottom: 20px;
+    background-color: #00F6FF; /* Sea color */
+    color: #060606; /* Night color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hint-button:hover {
+    background-color: #00FFF0; /* Mint color */
+}
+
+.next-button {
+    margin-top: 20px;
+    background-color: #00F6FF; /* Sea color */
+    color: #060606; /* Night color */
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #00FFF0; /* Mint color */
+}

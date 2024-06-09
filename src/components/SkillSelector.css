@@ -1,0 +1,82 @@
+/* src/components/SkillSelector.css */
+
+.skill-selector {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    background: #7BA8FF;
+    color: #060606;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skill-button:hover {
+    background: #B896FF;
+}
+
+.select-text {
+    font-size: 1.4rem;
+    color: #00FFF0;
+    margin-top: 20px;
+}
+/* src/components/SkillSelector.css */
+
+.skill-selector {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-button {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    background: #7BA8FF;
+    color: #060606;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skill-button:hover {
+    background: #B896FF;
+}
+
+
+.select-text {
+    font-size: 1.6rem;
+    color: #00FFF0;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.skill-selector-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.select-skill {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.selected-skill {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+}
